@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/webapp/adminDashboard.jsp=UTF-8
+encoding//src/main/resources/webapp/appointments.jsp=UTF-8
+encoding//src/main/resources/webapp/bookAppointment.jsp=UTF-8
+encoding//src/main/resources/webapp/doctorDashboard.jsp=UTF-8
+encoding//src/main/resources/webapp/exam.jsp=UTF-8
+encoding//src/main/resources/webapp/index.jsp=UTF-8
+encoding//src/main/resources/webapp/manageDoctors.jsp=UTF-8
+encoding//src/main/resources/webapp/patientDashboard.jsp=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8
