@@ -482,7 +482,84 @@ to {
 	color: #333;
 	cursor: pointer;
 }
+
+
+
+/* Common Reset */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Floating Icon (Desktop) */
+.floating-call-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.floating-call-icon:hover {
+  background-color: #218838;
+}
+
+/* Mobile Sticky Call Bar */
+.mobile-call-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
+
+.mobile-call-bar:hover {
+  background-color: #0a58ca;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+/* Responsive Toggle */
+@media only screen and (max-width: 768px) {
+  .floating-call-icon {
+    display: none;
+  }
+  .mobile-call-bar {
+    display: block;
+  }
+}
 </style>
+
 
 </head>
 <body>
@@ -712,6 +789,15 @@ to {
 </div>
 
 
+<!-- 📞 Floating Call Button (Desktop) -->
+<a href="tel:+91 7799465956" class="floating-call-icon" title="Call Us">
+  📞
+</a>
+
+<!-- 📱 Mobile Sticky Call Bar -->
+<a href="tel:+91 7799465956" class="mobile-call-bar">
+  📞 Call Now
+</a>
 
 
 

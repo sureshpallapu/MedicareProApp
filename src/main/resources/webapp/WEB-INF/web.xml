@@ -2,5 +2,8 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
+	<session-config>
+    <session-timeout>3</session-timeout> <!-- In minutes -->
+</session-config>
 	
 </web-app>

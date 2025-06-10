@@ -5,20 +5,55 @@
 <meta charset="UTF-8" />
 <title>Privacy Policy - MediCarePro</title>
 <style>
-body {
-	font-family: Arial, sans-serif;
-	margin: 20px;
-	line-height: 1.6;
-}
+  :root {
+    --primary-color: #2c3e50;
+    --text-color: #333;
+    --bg-color: #f9f9f9;
+    --max-width: 900px;
+  }
 
-h1 {
-	color: #2c3e50;
-}
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 40px 20px;
+    color: var(--text-color);
+    line-height: 1.75;
+  }
 
-p {
-	max-width: 800px;
-}
+  h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
+
+  p {
+    max-width: var(--max-width);
+    margin: 0 auto 20px auto;
+    font-size: 18px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 20px 10px;
+    }
+
+    p {
+      font-size: 16px;
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
 </style>
+
 </head>
 <body>
 	<h1>Privacy Policy</h1>

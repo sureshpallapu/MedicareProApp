@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,8 @@
 
         .container {
             max-width: 800px;
-            
+             width: 90%;
+        padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: box-shadow 0.3s ease;
