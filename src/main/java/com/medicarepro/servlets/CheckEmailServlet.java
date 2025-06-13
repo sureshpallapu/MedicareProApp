@@ -23,12 +23,12 @@ public class CheckEmailServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        try {
-            InitialContext ctx = new InitialContext();
-            dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/medicare_pro"); // Replace 'YourDB' with your JNDI name
-        } catch (NamingException e) {
-            throw new ServletException("DB connection error", e);
-        }
+//        try {
+//            InitialContext ctx = new InitialContext();
+//            dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/medicare_pro"); // Replace 'YourDB' with your JNDI name
+//        } catch (NamingException e) {
+//            throw new ServletException("DB connection error", e);
+//        }
     }
 
     @Override

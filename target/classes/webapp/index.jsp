@@ -314,9 +314,30 @@ h2 {
 	max-width: 60%;
 }
 
-.map-section {
-	flex: 1;
-	max-width: 40%;
+.faq-map-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 20px;
+	margin: 40px auto;
+	max-width: 1200px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+
+.faq, .map-section {
+	flex: 1 1 45%;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2, .map-section h2 {
+	margin-bottom: 20px;
+	color: #2c3e50;
 }
 
 .faq-item {
@@ -325,12 +346,20 @@ h2 {
 
 .faq-question {
 	font-weight: bold;
+	color: #333;
 	margin-bottom: 5px;
 }
 
 .faq-answer {
-	margin-left: 10px;
+	color: #555;
 }
+
+@media (max-width: 768px) {
+	.faq-map-container {
+		flex-direction: column;
+	}
+}
+
 
 /* Responsive */
 @media ( max-width : 768px) {
@@ -453,7 +482,84 @@ to {
 	color: #333;
 	cursor: pointer;
 }
+
+
+
+/* Common Reset */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Floating Icon (Desktop) */
+.floating-call-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.floating-call-icon:hover {
+  background-color: #218838;
+}
+
+/* Mobile Sticky Call Bar */
+.mobile-call-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0d6efd;
+  color: #fff;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
+
+.mobile-call-bar:hover {
+  background-color: #0a58ca;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+/* Responsive Toggle */
+@media only screen and (max-width: 768px) {
+  .floating-call-icon {
+    display: none;
+  }
+  .mobile-call-bar {
+    display: block;
+  }
+}
 </style>
+
 
 </head>
 <body>
@@ -673,16 +779,25 @@ to {
 		</section>
 
 		<!-- Map -->
-		<div class="map-section">
-			<h2>Find Us</h2>
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019869927301!2d-122.41941548468104!3d37.7749297797597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815cd7e879a3%3A0x8b57c4b4b8d46e3a!2sYour%20Hospital%20Name!5e0!3m2!1sen!2sus!4v1684500000000!5m2!1sen!2sus"
-				width="100%" height="300" style="border: 0;" allowfullscreen=""
-				loading="lazy"> </iframe>
-		</div>
-	</div>
+<div class="map-section">
+	<h2>Find Us</h2>
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.233006031882!2d77.61161287508368!3d12.916289887390692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c5da18d24b%3A0x62e3cf68199a27b1!2sPentagon%20Space%20-%20BTM%20layout!5e0!3m2!1sen!2sin!4v1717938328003!5m2!1sen!2sin"
+		width="100%" height="300" style="border:0;" allowfullscreen=""
+		loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+	</iframe>
+</div>
 
 
+<!-- 📞 Floating Call Button (Desktop) -->
+<a href="tel:+91 7799465956" class="floating-call-icon" title="Call Us">
+  📞
+</a>
+
+<!-- 📱 Mobile Sticky Call Bar -->
+<a href="tel:+91 7799465956" class="mobile-call-bar">
+  📞 Call Now
+</a>
 
 
 
