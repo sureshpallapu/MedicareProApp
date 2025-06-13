@@ -1,6 +1,6 @@
-<%@ page
+<%@ page 
     import="java.sql.*, com.medicarepro.DAO.DepartmentDAO, com.medicarepro.DTO.Department, com.medicarepro.utility.DBConnector"
-    contentType="text/html;charset=UTF-8" language="java"
+    contentType="text/html;charset=UTF-8" language="java" 
 %>
 <%
     String editId = request.getParameter("editId");
@@ -17,62 +17,87 @@
     }
 %>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Edit Department</title>
+    <meta charset="UTF-8">
+    <title>Edit Department - MediCarePro HMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f9f9f9;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+            margin: 0;
+            padding: 40px 20px;
             color: #333;
         }
 
         .form-section {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             max-width: 600px;
             margin: auto;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section h2 {
+            margin-bottom: 25px;
+            color: #006494;
         }
 
         label {
-            font-weight: bold;
             display: block;
-            margin-top: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #333;
         }
 
-        input[type="text"], textarea, select {
+        input[type="text"],
+        textarea,
+        select {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 6px;
+            padding: 12px 14px;
+            margin-top: 8px;
             border: 1px solid #ccc;
-            font-size: 14px;
+            border-radius: 8px;
+            font-size: 15px;
             box-sizing: border-box;
+            transition: border 0.2s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #0077b6;
+            outline: none;
         }
 
         input[type="submit"] {
+            display: inline-block;
             background-color: #0077b6;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 15px;
+            color: #fff;
+            padding: 14px 28px;
             font-size: 15px;
-            border-radius: 6px;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         input[type="submit"]:hover {
             background-color: #005f8a;
+            transform: translateY(-2px);
         }
 
         a.back-link {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             color: #0077b6;
+            font-weight: 500;
             text-decoration: none;
+            transition: text-decoration 0.2s;
         }
 
         a.back-link:hover {
@@ -92,15 +117,15 @@
         <input type="text" id="name" name="name" required value="<%= dept.getName() %>">
 
         <label for="facilities">Facilities:</label>
-        <textarea id="facilities" name="facilities" rows="4"><%= dept.getFacilities() %></textarea>
+        <textarea id="facilities" name="facilities" rows="4"><%= dept.getFacilities() != null ? dept.getFacilities() : "" %></textarea>
 
         <label for="doctors">Doctor IDs (comma separated):</label>
-        <input type="text" id="doctors" name="doctors" value="<%= (dept.getDoctors() == null ? "" : dept.getDoctors()) %>">
+        <input type="text" id="doctors" name="doctors" value="<%= dept.getDoctors() != null ? dept.getDoctors() : "" %>">
 
         <label for="status">Status:</label>
         <select id="status" name="status">
-            <option value="Active" <%= dept.getStatus().equalsIgnoreCase("Active") ? "selected" : "" %>>Active</option>
-            <option value="Inactive" <%= dept.getStatus().equalsIgnoreCase("Inactive") ? "selected" : "" %>>Inactive</option>
+            <option value="Active" <%= "Active".equalsIgnoreCase(dept.getStatus()) ? "selected" : "" %>>Active</option>
+            <option value="Inactive" <%= "Inactive".equalsIgnoreCase(dept.getStatus()) ? "selected" : "" %>>Inactive</option>
         </select>
 
         <input type="submit" value="Update Department">
