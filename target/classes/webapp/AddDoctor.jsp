@@ -133,7 +133,7 @@
 
         <input type="submit" value="Add Doctor">
     </form>
-    <a href="ManageDoctorServlet" class="back-link">← Back to Doctors List</a>
+    <a href="manageDoctors.jsp" class="back-link">← Back to Doctors List</a>
 </div>
 
 <%@ include file="footer.jsp" %>
