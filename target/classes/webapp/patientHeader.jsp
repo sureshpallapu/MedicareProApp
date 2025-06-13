@@ -21,7 +21,7 @@ body {
 	<nav
 		class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
 		<div class="container-fluid">
-			<a class="navbar-brand fw-bold" href="#">MediCarePro</a>
+			<a class="navbar-brand fw-bold" href="adminDashboard.jsp">MediCarePro</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#patientNavbar"
 				aria-controls="patientNavbar" aria-expanded="false"
@@ -39,13 +39,13 @@ body {
 						href="bookAppointment.jsp">Book Appointment</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						href="viewPatients.jsp">View All Patients</a></li>
+						href="appointments.jsp">View All Appointments</a></li>
 
 					<li class="nav-item"><a class="nav-link"
 						href="appointment_payment.jsp">Generate Bill</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						href="viewPatientRecord.jsp">Payment Records</a></li>
+						href="viewPayments.jsp">Payment Records</a></li>
 
 					<li class="nav-item"><a class="nav-link"
 						href="filterPatients.jsp">Inpatients / Outpatients</a></li>
