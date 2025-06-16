@@ -1,24 +1,31 @@
 <%@ page import="java.util.*, com.medicarepro.DTO.Doctor" %>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Manage Doctors - MediCarePro HMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background: #f4f6f9;
             color: #333;
-            padding: 20px;
+            padding: 0;
         }
 
         .content-wrapper {
-            margin-top: 30px;
+            margin-top: 80px; /* adjust for navbar height */
+            padding: 20px;
         }
 
+        /* Header Section */
         .header-section {
             display: flex;
             flex-wrap: wrap;
@@ -34,60 +41,42 @@
             color: #0d6efd;
         }
 
+        /* Buttons */
         .btn-group {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         .add-btn {
             padding: 10px 18px;
             background: #0d6efd;
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.3s ease;
             cursor: pointer;
+            transition: background 0.3s ease;
         }
 
         .add-btn:hover {
             background: #0b5ed7;
         }
 
-        .export-btn {
-            background-color: #6c757d;
-        }
-
         .export-btn.excel {
-            background-color: #28a745;
+            background: #28a745;
         }
 
         .export-btn.pdf {
-            background-color: #dc3545;
+            background: #dc3545;
         }
 
-        .search-section form {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .search-section input[type="text"] {
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            flex: 1;
-            min-width: 200px;
-        }
-
+        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: #fff;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -100,7 +89,7 @@
 
         th {
             background: #0d6efd;
-            color: white;
+            color: #fff;
         }
 
         tr:nth-child(even) {
@@ -108,20 +97,21 @@
         }
 
         tr:hover {
-            background-color: #eef2f7;
+            background: #eef2f7;
         }
 
+        /* Action Buttons */
         .action-btn {
+            display: inline-block;
             padding: 6px 12px;
             margin: 2px;
             border: none;
             border-radius: 6px;
-            color: white;
+            color: #fff;
             font-size: 14px;
             text-decoration: none;
             cursor: pointer;
-            display: inline-block;
-            transition: 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .edit-btn {
@@ -140,15 +130,17 @@
             background: #c82333;
         }
 
+        /* Status Button */
         .status-btn {
             padding: 6px 10px;
-            border-radius: 6px;
             border: none;
-            color: white;
+            border-radius: 6px;
+            color: #fff;
             font-weight: 500;
             cursor: pointer;
         }
 
+        /* No Data Row */
         .no-data {
             text-align: center;
             padding: 20px;
@@ -173,7 +165,35 @@
         }
     </style>
 </head>
+
 <body>
+
+<!-- Admin Navigation Bar (Fixed Top) -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="adminDashboard.jsp">MediCarePro HMS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="ManagePatient.jsp"><i class="fa-solid fa-user-injured"></i> Manage Patients</a></li>
+                <li class="nav-item"><a class="nav-link active" href="manageDoctors.jsp"><i class="fa-solid fa-user-doctor"></i> Manage Doctors</a></li>
+                <li class="nav-item"><a class="nav-link" href="manageStaff.jsp"><i class="fa-solid fa-people-group"></i> Manage Staff</a></li>
+                <li class="nav-item"><a class="nav-link" href="manageDepartments.jsp"><i class="fas fa-hospital"></i> Manage Departments</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewReports.jsp"><i class="fas fa-chart-line"></i> View Reports</a></li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="AdminLogoutServlet" class="btn btn-outline-light"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
 <div class="content-wrapper">
     <div class="header-section">
         <h2><i class="fas fa-user-md"></i> Doctor Management</h2>
@@ -190,8 +210,6 @@
             <a href="AddDoctor.jsp" class="add-btn"><i class="fas fa-user-plus"></i> Add Doctor</a>
         </div>
     </div>
-
-   
 
     <table>
         <tr>
@@ -238,16 +256,15 @@
                     </button>
                 </form>
             </td>
-           <td>
-    <a href="EditDoctorServlet?id=<%= doctor.getId() %>" class="action-btn edit-btn">
-        <i class="fas fa-edit"></i> Edit
-    </a>
-    <a href="DeleteDoctorServlet?id=<%= doctor.getId() %>" class="action-btn delete-btn"
-       onclick="return confirm('Are you sure you want to delete this doctor?');">
-        <i class="fas fa-trash"></i> Delete
-    </a>
-</td>
-
+            <td>
+                <a href="EditDoctorServlet?id=<%= doctor.getId() %>" class="action-btn edit-btn">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <a href="DeleteDoctorServlet?id=<%= doctor.getId() %>" class="action-btn delete-btn"
+                   onclick="return confirm('Are you sure you want to delete this doctor?');">
+                    <i class="fas fa-trash"></i> Delete
+                </a>
+            </td>
         </tr>
         <% }
         } else { %>
@@ -257,6 +274,11 @@
         <% } %>
     </table>
 </div>
+
+<!-- Bootstrap JS (optional, for navbar toggler) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <%@ include file="footer.jsp" %>
+
 </body>
 </html>

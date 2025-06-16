@@ -380,9 +380,8 @@ nav.navbar a:hover {
 				</td>
 				<td><a href="edit_department.jsp?editId=<%=d.getId()%>"
 					class="btn edit">Edit</a> <a
-					href="DeleteDepartmentServlet?id=<%=d.getId()%>"
-					class="btn delete" onclick="return confirm('Are you sure?')">Delete</a>
-					<a
+					href="DeleteDepartmentServlet?id=<%=d.getId()%>" class="btn delete"
+					onclick="return confirm('Are you sure?')">Delete</a> <a
 					href="ToggleDepartmentStatusServlet?id=<%=d.getId()%>&status=<%=status != null ? status : "Inactive"%>"
 					class="btn toggle"> <%="Active".equalsIgnoreCase(status) ? "Deactivate" : "Activate"%>
 				</a></td>
