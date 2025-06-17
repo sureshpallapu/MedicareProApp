@@ -8,10 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+	rel="stylesheet">
 
 <!-- Custom Styles -->
 <style>
@@ -222,11 +226,10 @@ h2 {
 	transition: background 0.3s ease;
 	border-radius: 12px;
 }
+
 .speciality-card:hover::before {
 	background: rgba(30, 144, 255, 0.5);
 }
-
-
 
 .speciality-card .card-body {
 	position: relative;
@@ -237,7 +240,7 @@ h2 {
 	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
- /* Testimonials */  
+/* Testimonials */
 .testimonials {
 	background-color: #f9f9f9;
 	padding: 50px 0;
@@ -326,7 +329,6 @@ h2 {
 	box-sizing: border-box;
 }
 
-
 .faq, .map-section {
 	flex: 1 1 45%;
 	background-color: #fff;
@@ -354,12 +356,11 @@ h2 {
 	color: #555;
 }
 
-@media (max-width: 768px) {
+@media ( max-width : 768px) {
 	.faq-map-container {
 		flex-direction: column;
 	}
 }
-
 
 /* Responsive */
 @media ( max-width : 768px) {
@@ -483,98 +484,139 @@ to {
 	cursor: pointer;
 }
 
-
-
 /* Common Reset */
 a {
-  text-decoration: none;
-  color: white;
+	text-decoration: none;
+	color: white;
 }
 
 /* Floating Icon (Desktop) */
 .floating-call-icon {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #28a745;
-  color: #fff;
-  font-size: 24px;
-  text-align: center;
-  padding: 16px;
-  border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  animation: pulse 1.5s infinite;
-  transition: background-color 0.3s ease;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	background-color: #28a745;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	padding: 16px;
+	border-radius: 50%;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+	animation: pulse 1.5s infinite;
+	transition: background-color 0.3s ease;
 }
 
 .floating-call-icon:hover {
-  background-color: #218838;
+	background-color: #218838;
 }
 
 /* Mobile Sticky Call Bar */
 .mobile-call-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #0d6efd;
-  color: #fff;
-  text-align: center;
-  padding: 14px 0;
-  font-size: 18px;
-  font-weight: bold;
-  z-index: 9999;
-  animation: pulse 2s infinite;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #0d6efd;
+	color: #fff;
+	text-align: center;
+	padding: 14px 0;
+	font-size: 18px;
+	font-weight: bold;
+	z-index: 9999;
+	animation: pulse 2s infinite;
 }
 
 .mobile-call-bar:hover {
-  background-color: #0a58ca;
+	background-color: #0a58ca;
 }
 
 /* Pulse Animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
-  }
+@
+keyframes pulse { 0% {
+	transform: scale(1);
+	box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+}
+
+70
+%
+{
+transform
+:
+scale(
+1.05
+);
+box-shadow
+:
+0
+0
+0
+10px
+rgba(
+40
+,
+167
+,
+69
+,
+0
+);
+}
+100
+%
+{
+transform
+:
+scale(
+1
+);
+box-shadow
+:
+0
+0
+0
+0
+rgba(
+40
+,
+167
+,
+69
+,
+0
+);
+}
 }
 
 /* Responsive Toggle */
 @media only screen and (max-width: 768px) {
-  .floating-call-icon {
-    display: none;
-  }
-  .mobile-call-bar {
-    display: block;
-  }
+	.floating-call-icon {
+		display: none;
+	}
+	.mobile-call-bar {
+		display: block;
+	}
 }
 </style>
 
 
 </head>
 <body>
-<%@ include file="header.jsp"%>
-<!-- anil.kumar@hospital.com   9876543210 -->
+	<%@ include file="header.jsp"%>
+	<!-- anil.kumar@hospital.com   9876543210 -->
 	<!-- Background Slideshow -->
 	<div class="background-slideshow" id="backgroundSlideshow">
-	<div class="message-overlay">
-		<h2 id="slideshowMessage">Welcome to Our Hospital</h2>
+		<div class="message-overlay">
+			<h2 id="slideshowMessage">Welcome to Our Hospital</h2>
+		</div>
+		<div class="cta-section">
+			<button onclick="window.location.href='indexappointmentbooking.jsp'"
+				class="cta-button">Book an Appointment</button>
+			<button onclick="window.location.href='doctors.jsp'"
+				class="cta-button secondary">Find a Doctor</button>
+		</div>
 	</div>
-	<div class="cta-section">
-		<button onclick="window.location.href='indexappointmentbooking.jsp'" class="cta-button">Book an Appointment</button>
-		<button onclick="window.location.href='doctors.jsp'" class="cta-button secondary">Find a Doctor</button>
-	</div>
-</div>
 
 
 	<!-- Video Carousel -->
@@ -628,23 +670,23 @@ a {
 		<h2>Our Services</h2>
 		<div class="services-cards">
 			<div class="service-card">
-				<img src="images/opd.jpg" alt="OPD"> 
+				<img src="images/opd.jpg" alt="OPD">
 				<p>OPD</p>
 			</div>
 			<div class="service-card">
-				<img src="images/icu.jpg" alt="ICU"> 
+				<img src="images/icu.jpg" alt="ICU">
 				<p>ICU</p>
 			</div>
 			<div class="service-card">
-				<img src="images/diagnostics.jpg" alt="Diagnostics"> 
+				<img src="images/diagnostics.jpg" alt="Diagnostics">
 				<p>Diagnostics</p>
 			</div>
 			<div class="service-card">
-				<img src="images/pharmacy.jpg" alt="Pharmacy"> 
+				<img src="images/pharmacy.jpg" alt="Pharmacy">
 				<p>Pharmacy</p>
 			</div>
 			<div class="service-card">
-				<img src="images/Emergency.jpg" alt="Emergency"> 
+				<img src="images/Emergency.jpg" alt="Emergency">
 				<p>Emergency</p>
 			</div>
 		</div>
@@ -779,55 +821,53 @@ a {
 		</section>
 
 		<!-- Map -->
-<div class="map-section">
-	<h2>Find Us</h2>
-	<iframe
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.233006031882!2d77.61161287508368!3d12.916289887390692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c5da18d24b%3A0x62e3cf68199a27b1!2sPentagon%20Space%20-%20BTM%20layout!5e0!3m2!1sen!2sin!4v1717938328003!5m2!1sen!2sin"
-		width="100%" height="300" style="border:0;" allowfullscreen=""
-		loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-	</iframe>
-</div>
-
-
-<!-- 📞 Floating Call Button (Desktop) -->
-<a href="tel:+91 7799465956" class="floating-call-icon" title="Call Us">
-  📞
-</a>
-
-<!-- 📱 Mobile Sticky Call Bar -->
-<a href="tel:+91 7799465956" class="mobile-call-bar">
-  📞 Call Now
-</a>
-
-
-
-	<!-- Floating Enquire Button -->
-	<button id="enquireBtn" class="floating-btn">Enquire Now</button>
-
-	<!-- Enquiry Modal -->
-	<div id="enquiryModal" class="enquiry-modal">
-		<div class="enquiry-modal-content">
-			<span class="close-btn">&times;</span>
-			<h2>
-				Do you have a <span>Question?</span>
-			</h2>
-			<p>We're happy to help! Please fill out the form below.</p>
-			<form action="submitEnquiry.jsp" method="post"
-				onsubmit="return validateEnquiryForm()">
-				<input type="text" name="name" placeholder="Your Name" required>
-				<input type="email" name="email" placeholder="Your Email" required>
-				<textarea name="message" rows="4" placeholder="Your Message"
-					required></textarea>
-				<button type="submit" class="submit-btn">Submit Enquiry</button>
-			</form>
+		<div class="map-section">
+			<h2>Find Us</h2>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.233006031882!2d77.61161287508368!3d12.916289887390692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c5da18d24b%3A0x62e3cf68199a27b1!2sPentagon%20Space%20-%20BTM%20layout!5e0!3m2!1sen!2sin!4v1717938328003!5m2!1sen!2sin"
+				width="100%" height="300" style="border: 0;" allowfullscreen=""
+				loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
 		</div>
-	</div>
 
 
-	<button id="scrollTopBtn" aria-label="Scroll to top">⬆</button>
+		<!-- 📞 Floating Call Button (Desktop) -->
+		<a href="tel:+91 7799465956" class="floating-call-icon"
+			title="Call Us"> 📞 </a>
 
-	<%@ include file="footer.jsp"%>
-	<script>
+		<!-- 📱 Mobile Sticky Call Bar -->
+		<a href="tel:+91 7799465956" class="mobile-call-bar"> 📞 Call Now
+		</a>
+
+
+
+		<!-- Floating Enquire Button -->
+		<button id="enquireBtn" class="floating-btn">Enquire Now</button>
+
+		<!-- Enquiry Modal -->
+		<div id="enquiryModal" class="enquiry-modal">
+			<div class="enquiry-modal-content">
+				<span class="close-btn">&times;</span>
+				<h2>
+					Do you have a <span>Question?</span>
+				</h2>
+				<p>We're happy to help! Please fill out the form below.</p>
+				<form action="submitEnquiry.jsp" method="post"
+					onsubmit="return validateEnquiryForm()">
+					<input type="text" name="name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Your Email" required>
+					<textarea name="message" rows="4" placeholder="Your Message"
+						required></textarea>
+					<button type="submit" class="submit-btn">Submit Enquiry</button>
+				</form>
+			</div>
+		</div>
+
+
+		<button id="scrollTopBtn" aria-label="Scroll to top">⬆</button>
+
+		<%@ include file="footer.jsp"%>
+		<script>
   const track = document.getElementById("carouselTrack");
   const dotsContainer = document.getElementById("dots");
   const slides = document.querySelectorAll(".slide");
@@ -971,8 +1011,9 @@ observer.observe(document.querySelector('#stats'));
 	  return true;
 	}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>
