@@ -604,8 +604,7 @@ rgba(
 </head>
 <body>
 	<%@ include file="header.jsp"%>
-	<!-- anil.kumar@hospital.com   9876543210 -->
-	<!-- Background Slideshow -->
+	
 	<div class="background-slideshow" id="backgroundSlideshow">
 		<div class="message-overlay">
 			<h2 id="slideshowMessage">Welcome to Our Hospital</h2>

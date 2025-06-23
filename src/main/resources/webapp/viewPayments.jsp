@@ -187,7 +187,7 @@
                 <td data-label="Date"><%= rs.getDate("appointment_date") %></td>
                 <td data-label="Transaction ID"><%= rs.getString("transaction_id") != null ? rs.getString("transaction_id") : "N/A" %></td>
                 <td data-label="Status"><%= rs.getString("status") %></td>
-                <td data-label="Amount">₹<%= rs.getDouble("consultation_fee") %></td>
+                <td data-label="Amount">rs.<%= rs.getDouble("consultation_fee") %></td>
                 <td data-label="Timestamp"><%= rs.getTimestamp("created_at") %></td>
             </tr>
         <%
